@@ -14,6 +14,7 @@ public:
 	virtual ~SceneMenu(void);
 
 	virtual void update(float elapsedTime);
+	virtual void updateDraw(float elapsedTime);
 	virtual void draw(float elapsedTime);
 private:
 	sf::RenderWindow* window;

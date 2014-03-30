@@ -51,6 +51,7 @@ int main()
 			elapsed = clockDraw.restart();
 			//std::cout << "Draw: " << elapsed.asSeconds() << std::endl;
 			window.clear(sf::Color::White);
+			SceneManager::instance()->getCurrentScene()->updateDraw(elapsed.asSeconds());
 			SceneManager::instance()->getCurrentScene()->draw(elapsed.asSeconds());
 			window.display();
 		}

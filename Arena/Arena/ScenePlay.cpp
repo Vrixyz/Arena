@@ -56,14 +56,20 @@ void	ScenePlay::update(float elapsedTime)
 	worldView.setCenter(sf::Vector2f(p.first, p.second));
 }
 
+void	ScenePlay::updateDraw(float elapsedTime)
+{
+	world.updateDraw(sf::seconds(elapsedTime));
+}
+
 void	ScenePlay::draw(float elapsedTime)
 {
 	const sf::View& oldView = window->getView();
+
 	window->setView(worldView);
 	sf::RenderStates r;
 //	r.transform.scale(3,3);
 	r.transform.scale(1,1);
-	r.transform.translate(-16,-16);
+	//r.transform.translate(-16,-16);
 	world.draw(*window, r);
 	window->setView(oldView);
 	hud.draw(*window);

@@ -16,6 +16,11 @@ void SceneMenu::update(float elapsedTime)
 
 }
 
+void SceneMenu::updateDraw(float elapsedTime)
+{
+
+}
+
 void SceneMenu::draw(float elapsedTime)
 {
 	menuWelcome.draw(*window);
