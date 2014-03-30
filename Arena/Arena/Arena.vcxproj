@@ -151,6 +151,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnimatedSprite.cpp" />
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="DataManager.cpp" />
+    <ClCompile Include="GameUpdater.cpp" />
     <ClCompile Include="HealthSprite.cpp" />
     <ClCompile Include="LayerHud.cpp" />
     <ClCompile Include="main.cpp" />
@@ -158,9 +162,17 @@
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneMenu.cpp" />
     <ClCompile Include="ScenePlay.cpp" />
-    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="SpriteSheet.cpp" />
+    <ClCompile Include="SpriteSheetManager.cpp" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="TileGame.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimatedSprite.h" />
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="DataManager.h" />
+    <ClInclude Include="GameUpdater.h" />
     <ClInclude Include="HealthSprite.h" />
     <ClInclude Include="ILayer.h" />
     <ClInclude Include="LayerHUD.h" />
@@ -170,13 +182,21 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneMenu.h" />
     <ClInclude Include="ScenePlay.h" />
-    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="SpriteSheet.h" />
+    <ClInclude Include="SpriteSheetManager.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="TileGame.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="orangejuice2.0.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="BODY_male.png" />
+    <Image Include="Castle2.png" />
+    <Image Include="Char-Sheet-Full.jpg" />
     <Image Include="gold_HUD.png" />
+    <Image Include="wood_tileset_3.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

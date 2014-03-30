@@ -18,7 +18,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "SFML works!");
 
 	SceneManager* sceneManager = SceneManager::initialize();
-	TextureManager* textureManager = TextureManager::initialize();
+	SpriteSheetManager* spriteSheetManager = SpriteSheetManager::initialize();
 
 	sceneManager->pushScene(new SceneMenu(&window));
 
@@ -36,7 +36,7 @@ int main()
 		if (elapsed.asSeconds() > updateRate) 
 		{
 			elapsed = clockUpdate.restart();
-			std::cout << "Update ! " << elapsed.asSeconds() << std::endl;
+			//::cout << "Update ! " << elapsed.asSeconds() << std::endl;
 			sf::Event event;
 			while (window.pollEvent(event))
 			{
@@ -49,13 +49,13 @@ int main()
 		if (elapsed.asSeconds() > drawRate) // 60 times per second, let's draw
 		{
 			elapsed = clockDraw.restart();
-			std::cout << "Draw: " << elapsed.asSeconds() << std::endl;
+			//std::cout << "Draw: " << elapsed.asSeconds() << std::endl;
 			window.clear(sf::Color::White);
 			SceneManager::instance()->getCurrentScene()->draw(elapsed.asSeconds());
 			window.display();
 		}
 
-		sf::sleep(sf::seconds(drawRate)); // mayne it's a high sleep but let's see if it's noticeable...
+		sf::sleep(sf::seconds(drawRate)); // maybe it's a high sleep but let's see if it's noticeable...
     }
 
     return 0;

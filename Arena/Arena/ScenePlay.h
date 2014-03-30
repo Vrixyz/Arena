@@ -5,6 +5,8 @@
 #include "IScene.h"
 
 #include "LayerHud.h"
+#include "World.h"
+#include "TileGame.h"
 
 class ScenePlay :
 	public IScene
@@ -18,6 +20,8 @@ public:
 
 private:
 	sf::RenderWindow* window;
+	sf::View worldView;
 	LayerHud hud;
+	World world;
 };
 

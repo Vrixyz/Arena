@@ -2,7 +2,7 @@
 
 
 HealthSprite::HealthSprite(void) : Drawable(), sf::Transformable(),
-	texture(TextureManager::instance()->retrieve("gold_HUD.png")),
+	texture(&SpriteSheetManager::instance()->retrieve("gold_HUD.png")->t),
 	container(*texture, sf::IntRect(447, 179, 85, 65)),
 	firstEmptyJauge(*texture, sf::IntRect(533, 184, 8, 16)),
 	emptyJauge(*texture, sf::IntRect(542, 184, 8, 16)),

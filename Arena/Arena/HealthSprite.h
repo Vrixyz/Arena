@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 
-#include "TextureManager.h"
+#include "SpriteSheetManager.h"
 
 class HealthSprite :
 	public sf::Drawable, public sf::Transformable
