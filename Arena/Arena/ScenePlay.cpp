@@ -9,12 +9,12 @@ ScenePlay::ScenePlay(sf::RenderWindow* w) : hud(w)
 	SpriteSheet* s = SpriteSheetManager::instance()->retrieve("wood_tileset_3.png");
 			
 	GameUpdater::TileMap gameTiles;
-	for (int x = 0; x < 50; ++x)
+	for (int x = 0; x < 20; ++x)
 	{
 		GameUpdater::tileColumn* c = NULL;
 		if (gameTiles.count(x))
 			c = gameTiles[x];
-		for (int y = 0; y < 50; ++y)
+		for (int y = 0; y < 20; ++y)
 		{
 			if (!c)
 				c = gameTiles[x] = new GameUpdater::tileColumn();
@@ -27,6 +27,7 @@ ScenePlay::ScenePlay(sf::RenderWindow* w) : hud(w)
 	}
 
 	//std::cout << "new world created! " << std::endl;
+	world.dataManager.server.gameTiles = gameTiles;
 	world.tiles = World::mapWorldTilesToSprite(gameTiles);
 	//std::cout << "new world converted! " << std::endl;
 	worldView = window->getView();
@@ -43,13 +44,13 @@ void	ScenePlay::update(float elapsedTime)
 {
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
-		world.gameUpdater.movePlayerUp();
+		world.dataManager.server.movePlayerUp();
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
-		world.gameUpdater.movePlayerLeft();
+		world.dataManager.server.movePlayerLeft();
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-		world.gameUpdater.movePlayerDown();
+		world.dataManager.server.movePlayerDown();
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-		world.gameUpdater.movePlayerRight();
+		world.dataManager.server.movePlayerRight();
 	world.update(sf::seconds(elapsedTime)); // it will update visually what we know
 	stdPairf p = World::worldCoordToSfml(stdPairf(world.playerPosition.x, world.playerPosition.y));
 
@@ -68,7 +69,7 @@ void	ScenePlay::draw(float elapsedTime)
 	window->setView(worldView);
 	sf::RenderStates r;
 //	r.transform.scale(3,3);
-	r.transform.scale(1,1);
+	//r.transform.scale(1,1);
 	//r.transform.translate(-16,-16);
 	world.draw(*window, r);
 	window->setView(oldView);
