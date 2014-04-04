@@ -1,0 +1,6 @@
+Font : http://www.1001freefonts.com/orange_juice.font
+
+Sprites:
+	terrain : http://opengameart.org/content/2d-lost-garden-tileset-transition-to-jetrels-wood-tileset (Hyptosis, Zabin, Daniel Cook)
+	hud : http://opengameart.org/content/golden-ui-bigger-than-ever-edition (http://opengameart.org/users/buch Buch)
+	character : http://opengameart.org/content/lpc-medieval-fantasy-character-sprites (wulax)
