@@ -4,6 +4,6 @@ class Utils
 public:
 	Utils(void);
 	~Utils(void);
-	static double round(double f);
+	static int round(double f);
 };
 

@@ -95,9 +95,9 @@ void World::update(const sf::Time& elapsedTime)
 	mousePos *= 2; // This is a shortcut, because our camera is always at half our distance from mouse, so we can just double it.
 	stdPairf wPlayerRelPos = World::sfmlCoordToWorld(stdPairf((float)mousePos.x, (float)mousePos.y));
 	dataManager.server.setRelativeAimPoint(wPlayerRelPos.first, wPlayerRelPos.second);
-	float angle = std::tan((mousePos.x + sfmlPlayerPos.first) / (mousePos.y + sfmlPlayerPos.second));
-	angle  *= (float)(180 / M_PI);
-	std::cout << "relative pos : " << wPlayerRelPos.first << ";" << wPlayerRelPos.second << std::endl;
+
+	
+	//std::cout << "relative pos : " << wPlayerRelPos.first << ";" << wPlayerRelPos.second << std::endl;
 	//std::cout << "mouse pos : " << mousePos.x << ";" << mousePos.y << std::endl;
 	//std::cout << "relative pos : " << playerPos.x << ";" << playerPos.y << std::endl;
 	//std::cout << "relative pos : " << sfmlPlayerPos.first << ";" << sfmlPlayerPos.second << std::endl;

@@ -5,6 +5,9 @@
 #include "Utils.h"
 #include "TileGame.h"
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
 class GameUpdater
 {
 public:
@@ -32,6 +35,7 @@ private:
 	float relativeAim[2];
 	static float playerMaxSpeed;
 
+	TileMap* fillLine(int x1, int y1, int x2, int y2, GameUpdater::TileMap* map) const;
 	TileMap*	rec_buildKnownTiles(TileMap* m, int viewRange, int x, int y) const;
 
 

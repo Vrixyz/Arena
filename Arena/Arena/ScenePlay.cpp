@@ -9,12 +9,12 @@ ScenePlay::ScenePlay(sf::RenderWindow* w) : hud(w), world(*w)
 	SpriteSheet* s = SpriteSheetManager::instance()->retrieve("wood_tileset_3.png");
 			
 	GameUpdater::TileMap gameTiles;
-	for (int x = 0; x < 20; ++x)
+	for (int x = 0; x < 50; ++x)
 	{
 		GameUpdater::tileColumn* c = NULL;
 		if (gameTiles.count(x))
 			c = gameTiles[x];
-		for (int y = 0; y < 20; ++y)
+		for (int y = 0; y < 50; ++y)
 		{
 			if (!c)
 				c = gameTiles[x] = new GameUpdater::tileColumn();
