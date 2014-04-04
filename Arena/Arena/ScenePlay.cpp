@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-ScenePlay::ScenePlay(sf::RenderWindow* w) : hud(w)
+ScenePlay::ScenePlay(sf::RenderWindow* w) : hud(w), world(*w)
 {
 	std::cout << "ScenePlay ! " << std::endl;
 	window = w;
@@ -30,7 +30,6 @@ ScenePlay::ScenePlay(sf::RenderWindow* w) : hud(w)
 	world.dataManager.server.gameTiles = gameTiles;
 	world.tiles = World::mapWorldTilesToSprite(gameTiles);
 	//std::cout << "new world converted! " << std::endl;
-	worldView = window->getView();
 	std::cout << "ScenePlay Loaded! " << std::endl;
 }
 
@@ -54,7 +53,6 @@ void	ScenePlay::update(float elapsedTime)
 	world.update(sf::seconds(elapsedTime)); // it will update visually what we know
 	stdPairf p = World::worldCoordToSfml(stdPairf(world.playerPosition.x, world.playerPosition.y));
 
-	worldView.setCenter(sf::Vector2f(p.first, p.second));
 }
 
 void	ScenePlay::updateDraw(float elapsedTime)
@@ -66,9 +64,9 @@ void	ScenePlay::draw(float elapsedTime)
 {
 	const sf::View& oldView = window->getView();
 
-	window->setView(worldView);
+	window->setView(world.worldView);
 	sf::RenderStates r;
-//	r.transform.scale(3,3);
+	r.transform.scale(1,1);
 	//r.transform.scale(1,1);
 	//r.transform.translate(-16,-16);
 	world.draw(*window, r);

@@ -21,7 +21,6 @@ public:
 
 private:
 	sf::RenderWindow* window;
-	sf::View worldView;
 	LayerHud hud;
 	World world;
 };
